@@ -6,7 +6,7 @@ import lotto.constants.LottoConstants;
 public class PurchaseAmount {
     private final int purchaseAmount;
 
-    PurchaseAmount(int purchaseAmount) {
+    public PurchaseAmount(int purchaseAmount) {
         validateAmount(purchaseAmount);
         this.purchaseAmount = purchaseAmount;
     }
