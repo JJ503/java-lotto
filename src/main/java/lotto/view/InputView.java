@@ -18,4 +18,9 @@ public class InputView {
         System.out.println(INPUT_WINNING_NUMBERS);
         return InputValidation.validateWinningNumbers(Console.readLine());
     }
+
+    public Integer readBonusNumbers() {
+        System.out.println(INPUT_WINNING_NUMBERS);
+        return InputValidation.validateBonusNumber(Console.readLine());
+    }
 }
