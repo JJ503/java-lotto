@@ -8,10 +8,12 @@ import lotto.view.OutputView;
 public class LottoController {
     InputView inputView = new InputView();
     OutputView outputView = new OutputView();
-    LottoService lottoService = new LottoService();
+    LottoService lottoService;
 
     public void startLottoGame() {
         PurchaseAmount purchaseAmount = enterPurchaseAmount();
+        lottoService = new LottoService(purchaseAmount.getLottoTickets());
+        outputView.printLottoTickets(lottoService.getLottos());
     }
 
     private PurchaseAmount enterPurchaseAmount() {
