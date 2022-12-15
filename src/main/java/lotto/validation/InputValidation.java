@@ -8,8 +8,11 @@ import java.util.stream.Collectors;
 
 public class InputValidation {
     private static final String COMMA = ",";
+    private static final String SPACE = " ";
+    private static final String NONE = "";
 
     public static Integer validateAmount(String amount) {
+        amount = removeSpace(amount);
         isExist(amount);
         Integer amountNumber = toNumber(amount);
         isZero(amountNumber);
@@ -18,6 +21,7 @@ public class InputValidation {
     }
 
     public static List<Integer> validateWinningNumbers(String numbers) {
+        numbers = removeSpace(numbers);
         isExist(numbers);
         List<Integer> winningNumbers = toIntegerList(numbers);
         isSix(winningNumbers.size());
@@ -26,6 +30,7 @@ public class InputValidation {
     }
 
     public static Integer validateBonusNumber(String number) {
+        number = removeSpace(number);
         isExist(number);
         return toNumber(number);
     }
@@ -56,6 +61,10 @@ public class InputValidation {
         if (inputValue % LottoConstants.AMOUNT_UNIT != LottoConstants.ZERO) {
             ExceptionMessage.INPUT_AMOUNT_UNITY.throwException();
         }
+    }
+
+    private static String removeSpace(String inputValue) {
+        return inputValue.replace(SPACE, NONE);
     }
 
     private static List<Integer> toIntegerList(String inputValue) {
