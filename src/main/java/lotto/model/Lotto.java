@@ -59,4 +59,8 @@ public class Lotto {
     private Set toSet(List<Integer> numbers) {
         return new HashSet<>(numbers);
     }
+
+    public boolean isMatchNumber(int number) {
+        return numbers.contains(number);
+    }
 }
