@@ -33,7 +33,7 @@ public enum Rank {
     }
 
     private int getMatchCount() {
-        return getMatchCount();
+        return matchCount;
     }
 
     public String getRankMessage(int count) {
