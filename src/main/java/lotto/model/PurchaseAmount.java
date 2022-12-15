@@ -16,13 +16,13 @@ public class PurchaseAmount {
         isAmountUnity(checkValue);
     }
 
-    private static void isZero(Integer inputValue) {
+    private void isZero(Integer inputValue) {
         if (inputValue == LottoConstants.ZERO) {
             ExceptionMessage.INPUT_MORE_THAN_ZERO.throwException();
         }
     }
 
-    private static void isAmountUnity(Integer inputValue) {
+    private void isAmountUnity(Integer inputValue) {
         if (inputValue / LottoConstants.AMOUNT_UNIT != LottoConstants.ZERO) {
             ExceptionMessage.INPUT_AMOUNT_UNITY.throwException();
         }
