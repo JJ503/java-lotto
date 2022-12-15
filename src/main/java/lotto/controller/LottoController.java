@@ -1,5 +1,6 @@
 package lotto.controller;
 
+import lotto.model.Lotto;
 import lotto.model.PurchaseAmount;
 import lotto.service.LottoService;
 import lotto.view.InputView;
@@ -14,6 +15,7 @@ public class LottoController {
         PurchaseAmount purchaseAmount = enterPurchaseAmount();
         lottoService = new LottoService(purchaseAmount.getLottoTickets());
         outputView.printLottoTickets(lottoService.getLottos());
+        Lotto lotto = enterWinningLotto();
     }
 
     private PurchaseAmount enterPurchaseAmount() {
@@ -22,6 +24,15 @@ public class LottoController {
         } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
             return enterPurchaseAmount();
+        }
+    }
+
+    private Lotto enterWinningLotto() {
+        try {
+            return new Lotto(inputView.readWinningNumbers());
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            return enterWinningLotto();
         }
     }
 }
