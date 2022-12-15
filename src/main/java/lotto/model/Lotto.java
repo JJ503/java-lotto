@@ -13,6 +13,7 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
+        Collections.sort(numbers);
         this.numbers = numbers;
     }
 
@@ -34,12 +35,12 @@ public class Lotto {
 
     private void isAllLottoNumber(List<Integer> numbers) {
         for (Integer number : numbers) {
-            isBetween1And45(number);
+            isLottoNumber(number);
         }
     }
 
     private void isLottoNumber(int number) {
-        if (isBetween1And45(number)) {
+        if (!isBetween1And45(number)) {
             ExceptionMessage.LOTTO_NUMBER_BETWEEN_1And45.throwException();
         }
     }
@@ -50,7 +51,7 @@ public class Lotto {
     }
 
     private void isDuplicate(List<Integer> numbers) {
-        if (!numbers.equals(toSet(numbers))) {
+        if (numbers.size() != toSet(numbers).size()) {
             ExceptionMessage.LOTTO_NUMBER_NOT_DUPLICATE.throwException();
         }
     }
