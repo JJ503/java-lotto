@@ -27,4 +27,8 @@ public class PurchaseAmount {
             ExceptionMessage.INPUT_AMOUNT_UNITY.throwException();
         }
     }
+
+    public int getLottoTickets() {
+        return purchaseAmount / LottoConstants.AMOUNT_UNIT;
+    }
 }
