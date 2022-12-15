@@ -25,6 +25,11 @@ public class InputValidation {
         return winningNumbers;
     }
 
+    public static Integer validateBonusNumber(String number) {
+        isExist(number);
+        return toNumber(number);
+    }
+
     private static void isExist(String inputValue) {
         if (inputValue.isEmpty()) {
             ExceptionMessage.NONE_INPUT.throwException();
