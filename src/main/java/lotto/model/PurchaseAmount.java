@@ -23,7 +23,7 @@ public class PurchaseAmount {
     }
 
     private void isAmountUnity(Integer inputValue) {
-        if (inputValue / LottoConstants.AMOUNT_UNIT != LottoConstants.ZERO) {
+        if (inputValue % LottoConstants.AMOUNT_UNIT != LottoConstants.ZERO) {
             ExceptionMessage.INPUT_AMOUNT_UNITY.throwException();
         }
     }
