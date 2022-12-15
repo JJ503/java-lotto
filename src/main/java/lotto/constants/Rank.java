@@ -15,6 +15,8 @@ public enum Rank {
 
     private static final Map<Integer, Rank> RANK_BY_MATCH_COUNT = Stream.of(values())
             .collect(Collectors.toMap(Rank::getMatchCount, Function.identity()));
+    private static final String SECOND_PRIZE_MESSAGE_FORMAT = "%d개 일치, 보너스 볼 일치 (%,d원) - %d개";
+    private static final String MESSAGE_FORMAT = "%d개 일치 (%,d원) - %d개";
 
     private final int prizeMoney;
     private final int matchCount;
@@ -26,8 +28,20 @@ public enum Rank {
         this.bonus = bonus;
     }
 
+    public int getPrizeMoney() {
+        return prizeMoney;
+    }
+
     private int getMatchCount() {
         return getMatchCount();
+    }
+
+    public String getRankMessage(int count) {
+        if (this.equals(Rank.SECOND_PRIZE)) {
+            return String.format(SECOND_PRIZE_MESSAGE_FORMAT, matchCount, prizeMoney, count);
+        }
+
+        return String.format(MESSAGE_FORMAT, matchCount, prizeMoney, count);
     }
 
     public static Rank getRank(int matchCount, boolean bonus) {
