@@ -11,6 +11,10 @@ public class PurchaseAmount {
         this.purchaseAmount = purchaseAmount;
     }
 
+    public int getPurchaseAmount() {
+        return purchaseAmount;
+    }
+
     private void validateAmount(int checkValue) {
         isZero(checkValue);
         isAmountUnity(checkValue);
