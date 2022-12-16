@@ -224,3 +224,6 @@
     ```java
     List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
     ```
+
+## 시간 기록
+테스트 코드를 만들지 못했으며, 10분 오버됨
