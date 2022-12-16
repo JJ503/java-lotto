@@ -3,6 +3,9 @@ package lotto.service;
 import lotto.model.*;
 import lotto.util.RandomLottoNumbersGenerator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LottoService {
     private static final
 
@@ -11,7 +14,9 @@ public class LottoService {
 
     public LottoService(int ticketCount) {
         for (int i = 0; i < ticketCount; i++) {
-            lottos.addLotto(new Lotto(new RandomLottoNumbersGenerator().generate()));
+            List<Integer> randomLotto =
+                    new ArrayList<>(new RandomLottoNumbersGenerator().generate());
+            lottos.addLotto(new Lotto(randomLotto));
         }
     }
 
