@@ -24,4 +24,16 @@ public class LottoService {
             prizes.addPrize(new Prize(lotto, winningNumbers, bonusNumber));
         }
     }
+
+    public Prizes getResult() {
+        return prizes;
+    }
+
+    public double getRateOfReturn(float purchaseAmount) {
+        return roundSecondDigit(prizes.getTotalPrizeMoney() / purchaseAmount * 100);
+    }
+
+    public double roundSecondDigit(double value) {
+        return Math.round(value * 100) / 100;
+    }
 }
