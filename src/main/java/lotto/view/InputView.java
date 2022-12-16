@@ -8,6 +8,7 @@ import java.util.List;
 public class InputView {
     private static final String INPUT_PURCHASE_AMOUNT = "구입금액을 입력해 주세요.";
     private static final String INPUT_WINNING_NUMBERS = "당첨 번호를 입력해 주세요.";
+    private static final String INPUT_BONUS_NUMBERS = "보너스 번호를 입력해 주세요.";
 
     public int readPurchaseAmount() {
         System.out.println(INPUT_PURCHASE_AMOUNT);
@@ -20,7 +21,7 @@ public class InputView {
     }
 
     public Integer readBonusNumbers() {
-        System.out.println(INPUT_WINNING_NUMBERS);
+        System.out.println(INPUT_BONUS_NUMBERS);
         return InputValidation.validateBonusNumber(Console.readLine());
     }
 }
