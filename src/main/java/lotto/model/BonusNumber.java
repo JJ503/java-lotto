@@ -11,6 +11,10 @@ public class BonusNumber {
         this.bonusNumber = bonusNumber;
     }
 
+    public int getBonusNumber() {
+        return bonusNumber;
+    }
+
     private void validate(int number, Lotto lotto) {
         isLottoNumber(number);
         isNotDuplicateNumbers(number, lotto);
