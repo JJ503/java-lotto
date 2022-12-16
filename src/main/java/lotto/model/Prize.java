@@ -2,8 +2,6 @@ package lotto.model;
 
 import lotto.constants.Rank;
 
-import java.util.List;
-
 public class Prize {
     private final Rank rank;
 
@@ -17,9 +15,7 @@ public class Prize {
     }
 
     private int countMatchWinningNumbers(Lotto lotto, Lotto winningNumbers) {
-        List<Integer> tempLotto = lotto.getLotto();
-        tempLotto.retainAll(winningNumbers.getLotto());
-        return tempLotto.size();
+        return lotto.getMatchNumber(winningNumbers.getLotto()).size();
     }
 
     private boolean isMatchBonusNumber(Lotto lotto, BonusNumber bonusNumber) {
